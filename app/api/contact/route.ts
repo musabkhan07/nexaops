@@ -1,0 +1,2 @@
+import { NextResponse } from 'next/server'; import { prisma } from '@/lib/prisma'; import { contactSchema } from '@/lib/validation';
+export async function POST(req:Request){try{const parsed=contactSchema.safeParse(await req.json());if(!parsed.success)return NextResponse.json({error:'Please check the form fields.'},{status:400});await prisma.contactMessage.create({data:parsed.data});return NextResponse.json({ok:true})}catch{return NextResponse.json({error:'Unable to send message.'},{status:500})}}

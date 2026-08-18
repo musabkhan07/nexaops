@@ -1,0 +1,2 @@
+import { NextResponse } from 'next/server'; import { prisma } from '@/lib/prisma'; import { consultationSchema } from '@/lib/validation';
+export async function POST(req:Request){try{const parsed=consultationSchema.safeParse(await req.json());if(!parsed.success)return NextResponse.json({error:'Please check the form fields.'},{status:400});const d=parsed.data;const c=await prisma.consultation.create({data:{...d,date:new Date(d.date)}});return NextResponse.json({ok:true,id:c.id})}catch{return NextResponse.json({error:'Unable to book right now.'},{status:500})}}

@@ -1,0 +1,2 @@
+import Section from '@/components/Section'; import ConsultationForm from '@/components/ConsultationForm';
+export default function Consultation(){return <Section eyebrow="Free Consultation" title="Choose a time to discuss your project."><div style={{maxWidth:850}}><p className="muted" style={{fontSize:18,lineHeight:1.7}}>Select a preferred date and time. Requests are stored securely for the NexaOps team to review and confirm.</p><ConsultationForm/></div></Section>}

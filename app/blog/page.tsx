@@ -1,0 +1,3 @@
+import Section from '@/components/Section';
+const topics=['AIOps','DevOps','Cloud','Automation','Monitoring','AI','Linux','Infrastructure','Cybersecurity basics','IT operations'];
+export default function Blog(){return <Section eyebrow="Blog / Resources" title="Technical resources for modern IT operations."><p className="muted" style={{fontSize:18,maxWidth:750}}>A publishing foundation for practical guides, tutorials and explainers around AIOps, DevOps, cloud and automation.</p><div style={{display:'grid',gridTemplateColumns:'repeat(5,1fr)',gap:12,marginTop:35}}>{topics.map(x=><div className="card" key={x}><b>{x}</b><p className="muted" style={{fontSize:13}}>Articles coming soon.</p></div>)}</div></Section>}

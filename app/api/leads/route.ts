@@ -1,0 +1,2 @@
+import { NextResponse } from 'next/server'; import { prisma } from '@/lib/prisma'; import { leadSchema } from '@/lib/validation';
+export async function POST(req:Request){try{const parsed=leadSchema.safeParse(await req.json());if(!parsed.success)return NextResponse.json({error:'Please check the form fields.'},{status:400});const lead=await prisma.lead.create({data:parsed.data});return NextResponse.json({ok:true,id:lead.id})}catch{return NextResponse.json({error:'Unable to submit right now.'},{status:500})}}

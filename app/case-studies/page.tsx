@@ -1,0 +1,2 @@
+import Section from '@/components/Section'; import Link from 'next/link';
+export default function Cases(){return <Section eyebrow="Case Studies" title="Projects & Demonstrations Coming Soon"><div className="card" style={{maxWidth:780}}><p className="muted" style={{fontSize:18,lineHeight:1.7}}>We will publish real NexaOps projects here as they become available. We do not fabricate clients, results or case-study metrics.</p><Link className="btn primary" href="/consultation">Start a Project</Link></div></Section>}
